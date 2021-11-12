@@ -4,8 +4,8 @@ on:
 
 jobs:
   pull-request:
-    runs-on: windows-latest
+    runs-on: [windows-latest, ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - run: python -c "import os; os.mkdir('a'*261)"
+      - run: python -c "from pathlib import Path; (Path.cwd() / ('a'*131) / ('a'*131)).mkdir(parents=True)"
