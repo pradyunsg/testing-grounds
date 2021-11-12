@@ -3,16 +3,9 @@ on:
   push:
 
 jobs:
-  fail:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - run: pip install --upgrade pip<=21.2.0
   pull-request:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - run: python -m pip install https://github.com/pradyunsg/pip/archive/refs/heads/fix-protect-pip-on-windows-actions.zip
-      - run: pip install pip<=21.2.0
+      - run: python -c "import os; os.mkdir('a'*261)"
