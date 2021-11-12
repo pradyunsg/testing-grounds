@@ -3,8 +3,14 @@ on:
   push:
 
 jobs:
-  pull-request:
-    runs-on: [windows-latest, ubuntu-latest]
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: python -c "from pathlib import Path; (Path.cwd() / ('a'*131) / ('a'*131)).mkdir(parents=True)"
+  ubuntu:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
