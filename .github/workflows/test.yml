@@ -3,8 +3,9 @@ on:
 
 jobs:
   stb:
-    matrix:
-      os: [ubuntu, windows, macos]
+    strategy:
+      matrix:
+        os: [ubuntu, windows, macos]
     runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/setup-python@v2
