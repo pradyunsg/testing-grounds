@@ -1,0 +1,11 @@
+name: stb-testing
+on:
+  push:
+
+jobs:
+  stb-testing:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/setup-python@v2
+      - run: pip install https://github.com/pradyunsg/sphinx-theme-builder/archive/refs/heads/main.zip
+      - run: pip install --no-deps --no-build-isolation https://github.com/pradyunsg/furo/archive/refs/heads/main.zip
