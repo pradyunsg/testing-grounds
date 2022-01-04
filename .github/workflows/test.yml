@@ -1,10 +1,11 @@
-name: stb-testing
 on:
   push:
 
 jobs:
-  stb-testing:
-    runs-on: windows-latest
+  stb:
+    matrix:
+      os: [ubuntu, windows, macos]
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/setup-python@v2
       - run: pip install https://github.com/pradyunsg/sphinx-theme-builder/archive/refs/heads/main.zip
