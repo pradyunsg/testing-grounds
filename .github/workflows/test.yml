@@ -8,6 +8,8 @@ jobs:
         os: [ubuntu, windows, macos]
     runs-on: ${{ matrix.os }}-latest
     steps:
-      - uses: actions/setup-python@v2
-      - run: pip install https://github.com/pradyunsg/sphinx-theme-builder/archive/refs/heads/main.zip
-      - run: pip install --no-deps --no-build-isolation https://github.com/pradyunsg/furo/archive/refs/heads/main.zip
+      - uses: actions/setup-python@v4
+        with:
+           python-version: "3.7"
+      - run: python -c "import ssl; print( ssl.OPENSSL_VERSION )"
+      - run: python -c "import ssl; print( ssl.create_default_context() )"
