@@ -2,7 +2,7 @@ on:
   push:
 
 jobs:
-  stb:
+  test:
     strategy:
       matrix:
         os: [ubuntu, windows, macos]
