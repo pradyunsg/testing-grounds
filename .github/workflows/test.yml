@@ -12,4 +12,4 @@ jobs:
         with:
            python-version: "3.7"
       - run: python -c "import ssl; print( ssl.OPENSSL_VERSION )"
-      - run: python -c "import ssl; print( ssl.create_default_context() )"
+      - run: python -c "import ssl; print( ssl.get_default_verify_paths() )"
